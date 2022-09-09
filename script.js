@@ -21,8 +21,7 @@ $(".btn").click(function () {
   let userChosenColour = $(this).attr("id")
   userClickedPattern.push(userChosenColour)
   
-  $(this).fadeOut(100).fadeIn(100);////////////////////////////////
-
+  $(this).fadeOut(100).fadeIn(100);
   playSound(userChosenColour);
   animatePress(userChosenColour);
     
@@ -34,16 +33,11 @@ $(".btn").click(function () {
 }) 
 
 function checkAnswers(currentLevel) {
-
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
     
     if (gamePattern.length === userClickedPattern.length) {
-      // level++; 
-      // $("h1").text("level " + level)
       setTimeout(function() {
-        // $(".btn").unbind("click")
         nextSequence();
-        // userClickedPattern = [];
       }, 1000); 
     }
   } else {
